@@ -1,14 +1,15 @@
-bayesQR.single <- function(formula=NULL, data=NULL, quantile=0.5, alasso=FALSE, ndraw=NULL, keep=1, prior=NULL){
+bayesQR.single <- function(formula=NULL, data=NULL, quantile=0.5, alasso=FALSE, normal.approx=TRUE, ndraw=NULL, keep=1, prior=NULL){
 
-  # Create function for error message
-  pandterm <- function(message) {
-    stop(message, call. = FALSE)
-  }
-
-  # Extract input data
-	if (is.null(formula)){
-    pandterm("Formula has to be specified")
+	# Create function for error message
+	pandterm <- function(message) {
+	  stop(message, call. = FALSE)
 	}
+
+	# Extract input data
+	if (is.null(formula)){
+		pandterm("Formula has to be specified")
+	}
+
 	mf <- model.frame(formula=formula, data=data)
 	X <- model.matrix(attr(mf,"terms"), data=mf)
 	y <- model.response(mf)
@@ -17,119 +18,127 @@ bayesQR.single <- function(formula=NULL, data=NULL, quantile=0.5, alasso=FALSE, 
 	names <- colnames(X)
 
 	# Check specified quantile
-  if ((quantile<=0)|(quantile>=1)) {
-    pandterm("Quantiles should be between zero and one")
-  }
+	if ((quantile<=0)|(quantile>=1)) {
+		pandterm("Quantiles should be between zero and one")
+	}
 
-  # Check specified number of mcmc draws
-  if (is.null(ndraw)) {
-    pandterm("Number of mcmc draws (ndraw) has to be specified")
-  }
+	# Check specified number of mcmc draws
+	if (is.null(ndraw)) {
+		pandterm("Number of mcmc draws (ndraw) has to be specified")
+	}
 
-  # Check specified number of mcmc draws
-  if (keep>ndraw) {
-    pandterm("'keep' cannot be larger than 'ndraw'")
-  }
+	# Check specified number of mcmc draws
+	if (keep>ndraw) {
+		pandterm("'keep' cannot be larger than 'ndraw'")
+	}
 
-  # Determine method based on depvar
+	# Determine method based on depvar
 	dv <- unique(y)
+
+	## Reset option flags
 	QRc <- FALSE; QRc.AL <- FALSE; QRb <- FALSE; QRb.AL <- FALSE;
-  if (length(dv)>2){
-	  if (alasso) {
-		  QRc.AL <- TRUE
+
+	## Determine method
+	if (length(dv)>2){
+		if (alasso) {
+			QRc.AL <- TRUE
 		} else {
-		  QRc <- TRUE
+			QRc <- TRUE
 		}
 	} else if (length(dv)==2){
-	  if (!identical(as.numeric(sort(dv)),c(0,1))){
-		  pandterm("The dependent variable should be coded as vector of zeros and ones")
+		if (!identical(as.numeric(sort(dv)),c(0,1))){
+			pandterm("The dependent variable should be coded as vector of zeros and ones")
 		}
-	  if (alasso) {
-		  QRb.AL <- TRUE
+		if (alasso) {
+			QRb.AL <- TRUE
 		} else {
-		  QRb <- TRUE
+			QRb <- TRUE
 		}
 	} else {
-	  pandterm("Something is wrong with the dependent variable")
+		pandterm("Something is wrong with the dependent variable")
 	}
 
 	# QRc 
 	#================================
 	if (QRc) {
-	  # If missing, set default prior 
-    if (is.null(prior)) {
-		  prior <- prior(formula=formula, data=data, alasso=alasso)
+		# If missing, set default prior 
+		if (is.null(prior)) {
+			prior <- prior(formula=formula, data=data, alasso=alasso)
 		# Else check provided prior
-    } else if (class(prior)!="bayesQR.prior"){
+		} else if (class(prior)!="bayesQR.prior"){
 			pandterm("Incorrect prior: type '?prior' for more information about how to define priors")
-	  } else if (prior$method!="QRc") {
+		} else if (prior$method!="QRc") {
 			pandterm("Incorrect prior: type '?prior' for more information about how to define priors")
-	  }
+		} else if (normal & ((prior$sigma_shape != .01) | (prior$sigma_scale != .01))){
+			print("\nWARNING: when normal.approx equals TRUE, then sigma is fixed and a prior for sigma is thus irrelevant\n\n")
+		}
 
-    # Assign correct variable types
-    n <- as.integer(n)
-    nvar <- as.integer(nvar)
-    ndraw <- as.integer(ndraw)
-    keep <- as.integer(keep)
-    y <- as.double(y)
-    quantile <- as.double(quantile)
-    X <- as.double(X)
-    beta0 <- as.double(prior$beta0)
-    V0i <- as.double(chol2inv(chol(prior$V0)))
+		# Assign correct variable types
+		n <- as.integer(n)
+		nvar <- as.integer(nvar)
+		ndraw <- as.integer(ndraw)
+		keep <- as.integer(keep)
+		y <- as.double(y)
+		quantile <- as.double(quantile)
+		X <- as.double(X)
+		beta0 <- as.double(prior$beta0)
+		V0i <- as.double(chol2inv(chol(prior$V0)))
 		shape0 <- as.double(prior$shape0)
 		scale0 <- as.double(prior$scale0)
-    betadraw <- double(nvar*ndraw/keep)
-    sigmadraw <- double(ndraw/keep)
+		normal <- as.logical(normal.approx)
+		betadraw <- double(nvar*ndraw/keep)
+		sigmadraw <- double(ndraw/keep)
 
-    # Call Fortran routine
-    fn_val <- .Fortran("QRc_mcmc", n, nvar, ndraw, keep, y, quantile, X, beta0, V0i, shape0, scale0, betadraw, sigmadraw)
+		# Call Fortran routine
+		fn_val <- .Fortran("QRc_mcmc", n, nvar, ndraw, keep, y, quantile, X, beta0, V0i, shape0, scale0, normal, betadraw, sigmadraw)
 
-    # Return bayesQR object
+		# Return bayesQR object
 		out <- list(method="QRc",
-		            quantile=quantile,
-								names=names,
-                betadraw=matrix(fn_val[[12]], nrow=ndraw/keep,ncol=nvar),
-                sigmadraw=fn_val[[13]]
-					  		)
+			    quantile=quantile,
+			    names=names,
+			    betadraw=matrix(fn_val[[13]],nrow=ndraw/keep,ncol=nvar),
+			    sigmadraw=fn_val[[14]])
 
 	# QRc.AL
 	#================================
 	} else if (QRc.AL) {
-	  # If missing, set default prior 
-    if (is.null(prior)) {
-		  prior <- prior(formula=formula, data=data, alasso=alasso)
+		# If missing, set default prior 
+		if (is.null(prior)) {
+			prior <- prior(formula=formula, data=data, alasso=alasso)
 		# Else check provided prior
-    } else if (class(prior)!="bayesQR.prior"){
+		} else if (class(prior)!="bayesQR.prior"){
 			pandterm("Incorrect prior: type '?prior' for more information about how to define priors")
-	  } else if (prior$method!="QRc.AL") {
+		} else if (prior$method!="QRc.AL") {
 			pandterm("Incorrect prior: type '?prior' for more information about how to define priors")
-	  }
+		} else if (normal & ((prior$sigma_shape != .01) | (prior$sigma_scale != .01))){
+			print("\nWARNING: when normal.approx equals TRUE, then sigma is fixed and a prior for sigma is thus irrelevant\n\n")
+		}
 
-    # Assign correct variable types
-    n <- as.integer(n)
-    nvar <- as.integer(nvar)
-    ndraw <- as.integer(ndraw)
-    keep <- as.integer(keep)
-    y <- as.double(y)
-    quantile <- as.double(quantile)
-    x <- as.double(X)
-    a <- as.double(prior$a)
-    b <- as.double(prior$b)
-    c <- as.double(prior$c)
-    d <- as.double(prior$d)
-    betadraw <- double(nvar*ndraw/keep)
-    sigmadraw <- double(ndraw/keep)
+		# Assign correct variable types
+		n <- as.integer(n)
+		nvar <- as.integer(nvar)
+		ndraw <- as.integer(ndraw)
+		keep <- as.integer(keep)
+		y <- as.double(y)
+		quantile <- as.double(quantile)
+		x <- as.double(X)
+		a <- as.double(prior$a)
+		b <- as.double(prior$b)
+		c <- as.double(prior$c)
+		d <- as.double(prior$d)
+		normal <- as.logical(normal.approx)
+		betadraw <- double(nvar*ndraw/keep)
+		sigmadraw <- double(ndraw/keep)
 
-    # Call Fortran routine
-    fn_val <- .Fortran("QRc_AL_mcmc",n, nvar, ndraw, keep, y, quantile, x, a, b, c, d, betadraw, sigmadraw) 
+		# Call Fortran routine
+		fn_val <- .Fortran("QRc_AL_mcmc",n, nvar, ndraw, keep, y, quantile, x, a, b, c, d, normal, betadraw, sigmadraw) 
 
 		# Return bayesQR object
 		out <- list(method="QRc.AL",
-	              quantile=quantile,
-								names=names,
-	              betadraw=matrix(fn_val[[12]], nrow=ndraw/keep, ncol=nvar),
-	              sigmadraw=fn_val[[13]]
-	              )
+			    quantile=quantile,
+			    names=names,
+			    betadraw=matrix(fn_val[[13]],nrow=ndraw/keep, ncol=nvar),
+			    sigmadraw=fn_val[[14]])
 	
 	# QRb
 	#================================
