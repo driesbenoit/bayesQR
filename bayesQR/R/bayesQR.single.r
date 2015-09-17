@@ -69,8 +69,8 @@ bayesQR.single <- function(formula=NULL, data=NULL, quantile=0.5, alasso=FALSE, 
 			pandterm("Incorrect prior: type '?prior' for more information about how to define priors")
 		} else if (prior$method!="QRc") {
 			pandterm("Incorrect prior: type '?prior' for more information about how to define priors")
-		} else if (normal & ((prior$sigma_shape != .01) | (prior$sigma_scale != .01))){
-			print("\nWARNING: when normal.approx equals TRUE, then sigma is fixed and a prior for sigma is thus irrelevant\n\n")
+		} else if (normal.approx & ((prior$shape0 != .01) | (prior$scale0 != .01))){
+			print("WARNING: when normal.approx equals TRUE, then sigma is fixed and a prior for sigma is thus irrelevant")
 		}
 
 		# Assign correct variable types
@@ -92,12 +92,23 @@ bayesQR.single <- function(formula=NULL, data=NULL, quantile=0.5, alasso=FALSE, 
 		# Call Fortran routine
 		fn_val <- .Fortran("QRc_mcmc", n, nvar, ndraw, keep, y, quantile, X, beta0, V0i, shape0, scale0, normal, betadraw, sigmadraw)
 
+		# Normal approximation of posterior
+		if (normal.approx){
+			sigma.normal <- matrix(fn_val[[13]],nrow=ndraw/keep,ncol=nvar)
+			sigma.normal <- sweep(sigma.normal,2,colMeans(sigma.normal))
+			sigma.normal <- t(sigma.normal)%*%sigma.normal/(ndraw/keep)
+			sigma.normal <- n/sqrt(n)*quantile*(1-quantile)*sigma.normal%*%(t(matrix(X,nrow=n))%*%matrix(X,nrow=n))%*%sigma.normal
+			sigma.normal <- as.vector(sigma.normal)
+		}
+
 		# Return bayesQR object
 		out <- list(method="QRc",
+			    normal.approx=normal.approx,
 			    quantile=quantile,
 			    names=names,
 			    betadraw=matrix(fn_val[[13]],nrow=ndraw/keep,ncol=nvar),
-			    sigmadraw=fn_val[[14]])
+			    sigmadraw=fn_val[[14]],
+			    sigma.normal=ifelse(rep(normal.approx,nvar*nvar),sigma.normal,NA))
 
 	# QRc.AL
 	#================================
@@ -110,8 +121,8 @@ bayesQR.single <- function(formula=NULL, data=NULL, quantile=0.5, alasso=FALSE, 
 			pandterm("Incorrect prior: type '?prior' for more information about how to define priors")
 		} else if (prior$method!="QRc.AL") {
 			pandterm("Incorrect prior: type '?prior' for more information about how to define priors")
-		} else if (normal & ((prior$sigma_shape != .01) | (prior$sigma_scale != .01))){
-			print("\nWARNING: when normal.approx equals TRUE, then sigma is fixed and a prior for sigma is thus irrelevant\n\n")
+		} else if (normal.approx & ((prior$shape0 != .01) | (prior$scale0 != .01))){
+			print("WARNING: when normal.approx equals TRUE, then sigma is fixed and a prior for sigma is thus irrelevant")
 		}
 
 		# Assign correct variable types
@@ -133,13 +144,24 @@ bayesQR.single <- function(formula=NULL, data=NULL, quantile=0.5, alasso=FALSE, 
 		# Call Fortran routine
 		fn_val <- .Fortran("QRc_AL_mcmc",n, nvar, ndraw, keep, y, quantile, x, a, b, c, d, normal, betadraw, sigmadraw) 
 
+		# Normal approximation of posterior
+		if (normal.approx){
+			sigma.normal <- matrix(fn_val[[13]],nrow=ndraw/keep,ncol=nvar)
+			sigma.normal <- sweep(sigma.normal,2,colMeans(sigma.normal))
+			sigma.normal <- t(sigma.normal)%*%sigma.normal/(ndraw/keep)
+			sigma.normal <- n/sqrt(n)*quantile*(1-quantile)*sigma.normal%*%(t(matrix(X,nrow=n))%*%matrix(X,nrow=n))%*%sigma.normal
+			sigma.normal <- as.vector(sigma.normal)
+		}
+
 		# Return bayesQR object
 		out <- list(method="QRc.AL",
+			    normal.approx=normal.approx,
 			    quantile=quantile,
 			    names=names,
 			    betadraw=matrix(fn_val[[13]],nrow=ndraw/keep, ncol=nvar),
-			    sigmadraw=fn_val[[14]])
-	
+			    sigmadraw=fn_val[[14]],
+			    sigma.normal=ifelse(rep(normal.approx,nvar*nvar),sigma.normal,NA))
+
 	# QRb
 	#================================
 	} else if (QRb) {
