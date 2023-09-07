@@ -34,14 +34,17 @@ summary.bayesQR.single <- function(QRobj, burnin=0, credint=c(.025,.975)){
 	out$betadraw <- cbind(apply(QRobj$betadraw[burnin:ndraw,],FUN="mean",MARGIN=2),
 	                      t(apply(QRobj$betadraw[burnin:ndraw,],FUN="quantile",MARGIN=2,prob=credint)))
 
+	colnam <- c("Bayes Estimate", "lower", "upper")
+
 	if (QRobj$normal.approx){
 		sds <- sqrt(diag(matrix(QRobj$sigma.normal,nrow=k)))
 		out$betadraw <- cbind(out$betadraw,
 				      qnorm(p=credint[1],mean=out$betadraw[,1],sd=sds),
 				      qnorm(p=credint[2],mean=out$betadraw[,1],sd=sds))
+		colnam <- c(colnam, "adj.lower","adj.upper") 
 	}
 
-	colnames(out$betadraw) <- c("Bayes Estimate", "lower", "upper", "adj.lower","adj.upper") 
+	colnames(out$betadraw) <- colnam 
 	rownames(out$betadraw) <- QRobj$names
 
 	# If present, summarize sigmadraw

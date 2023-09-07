@@ -53,8 +53,9 @@ plot.bayesQR <- function(x, var=NULL, quantile=NULL, burnin=0, credint=c(.025,.9
 		for (i in 1:length(var)){
 		
 			# Create plotdata
+			nbrcol <- ifelse(QRsumobj[[i]]$normal.approx,5,3)
 			plotdata <- matrix(sapply(QRsumobj,"[[","betadraw"),nrow=nvar)[var[i],]
-			plotdata <- cbind(sapply(QRsumobj,"[[","quantile"),matrix(plotdata,ncol=5,byrow=TRUE))
+			plotdata <- cbind(sapply(QRsumobj,"[[","quantile"),matrix(plotdata,ncol=nbrcol,byrow=TRUE))
 
 			if (all(sapply(QRsumobj,"[[","normal.approx"))){
 				plotdata <- plotdata[,c(1,2,5,6)] 
@@ -69,7 +70,10 @@ plot.bayesQR <- function(x, var=NULL, quantile=NULL, burnin=0, credint=c(.025,.9
 			# Plot labels
 			if (is.null(main)) main <- ""
 			if (is.null(xlab)) xlab <- "quantile"
-			if (is.null(ylab)) ylab <- paste("Beta ",var[i],sep=""); z2 <- TRUE
+			if (is.null(ylab)){
+				ylab <- paste("Beta ",var[i],sep="")
+				z2 <- TRUE
+			}
 			
 			# Plot axes/box in correct scale
 			plot(x=NULL, y=NULL, xlim=xlim, ylim=ylim, main=main, xlab=xlab, ylab=ylab, ...)
@@ -129,9 +133,14 @@ plot.bayesQR <- function(x, var=NULL, quantile=NULL, burnin=0, credint=c(.025,.9
 		
 			# Loop trough all specified variables
 			for (ii in var){
+				if (is.null(ylab)){
+					ylab <- paste("Beta ",ii,sep="")
+				}
+				if (is.null(main)){
+					main <- paste("Quantile: ", x[[i]]$quantile, " - Beta ", ii)
+				}
 				plotdata <- x[[i]]$betadraw[,ii]
-				plot(plotdata[(burnin+1):length(plotdata)], typ="l", xlab="iteration", ylab="beta", 
-				main=paste("Quantile: ", x[[i]]$quantile, " - Beta ", ii))
+				plot(plotdata[(burnin+1):length(plotdata)], typ="l", xlab="iteration", ylab=ylab, main=main)
 				
 				# Ask user input
 				if (!((i==tail(loopvec,n=1))&(ii==tail(var,n=1)))){
@@ -168,11 +177,15 @@ plot.bayesQR <- function(x, var=NULL, quantile=NULL, burnin=0, credint=c(.025,.9
 			# Loop trough all specified variables
 			for (ii in var){
 				plotdata <- x[[i]]$betadraw[(burnin+1):nrow(x[[i]]$betadraw),ii]
-				hist(plotdata, breaks=100, prob=TRUE, xlab="beta", 
-				     main=paste("Quantile: ", x[[i]]$quantile, " - Beta ", ii))
+				if(is.null(xlab)) xlab <- "beta"
+				if (is.null(main)){
+					main <- paste("Quantile: ", x[[i]]$quantile, " - Beta ", ii)
+				}
+				hist(plotdata, breaks=100, prob=TRUE, xlab=xlab, main=main)
 				if (x[[i]]$normal.approx){
 					xseq <- seq(min(plotdata),max(plotdata),.001)
 					sigma.normal <- sqrt(diag(matrix(x[[i]]$sigma.normal,nrow=sqrt(length(x[[i]]$sigma.normal)))))
+					#points(xseq,dnorm(x=xseq,mean=mean(plotdata),sd=sigma.normal[ii]),typ="l",lty=2,lwd=2)
 					points(xseq,dnorm(x=xseq,mean=mean(plotdata),sd=sigma.normal[ii]),typ="l",col="blue",lwd=2)
 					legend("topright","Normal approximation",lty=1,lwd=2,col="blue")
 				}

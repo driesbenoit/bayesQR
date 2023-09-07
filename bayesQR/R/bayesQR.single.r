@@ -1,4 +1,4 @@
-bayesQR.single <- function(formula=NULL, data=NULL, quantile=0.5, alasso=FALSE, normal.approx=TRUE, ndraw=NULL, keep=1, prior=NULL){
+bayesQR.single <- function(formula=NULL, data=NULL, quantile=0.5, alasso=FALSE, normal.approx=NULL, ndraw=NULL, keep=1, prior=NULL){
 
 	# Create function for error message
 	pandterm <- function(message) {
@@ -61,16 +61,19 @@ bayesQR.single <- function(formula=NULL, data=NULL, quantile=0.5, alasso=FALSE, 
 	# QRc 
 	#================================
 	if (QRc) {
+		# If normal approx was left unspecified, switch it on
+		if (is.null(normal.approx)) normal.approx <- TRUE
+
 		# If missing, set default prior 
 		if (is.null(prior)) {
 			prior <- prior(formula=formula, data=data, alasso=alasso)
 		# Else check provided prior
-		} else if (class(prior)!="bayesQR.prior"){
+		} else if (is(prior)!="bayesQR.prior"){
 			pandterm("Incorrect prior: type '?prior' for more information about how to define priors")
 		} else if (prior$method!="QRc") {
 			pandterm("Incorrect prior: type '?prior' for more information about how to define priors")
 		} else if (normal.approx & ((prior$shape0 != .01) | (prior$scale0 != .01))){
-			print("WARNING: when normal.approx equals TRUE, then sigma is fixed and a prior for sigma is thus irrelevant")
+			warning("When normal.approx equals TRUE, then sigma is fixed and a prior for sigma is thus irrelevant")
 		}
 
 		# Assign correct variable types
@@ -113,16 +116,19 @@ bayesQR.single <- function(formula=NULL, data=NULL, quantile=0.5, alasso=FALSE, 
 	# QRc.AL
 	#================================
 	} else if (QRc.AL) {
+		# If normal approx was left unspecified, switch it on
+		if (is.null(normal.approx)) normal.approx <- TRUE
+
 		# If missing, set default prior 
 		if (is.null(prior)) {
 			prior <- prior(formula=formula, data=data, alasso=alasso)
 		# Else check provided prior
-		} else if (class(prior)!="bayesQR.prior"){
+		} else if (is(prior)!="bayesQR.prior"){
 			pandterm("Incorrect prior: type '?prior' for more information about how to define priors")
 		} else if (prior$method!="QRc.AL") {
 			pandterm("Incorrect prior: type '?prior' for more information about how to define priors")
 		} else if (normal.approx & ((prior$shape0 != .01) | (prior$scale0 != .01))){
-			print("WARNING: when normal.approx equals TRUE, then sigma is fixed and a prior for sigma is thus irrelevant")
+			warning("when normal.approx equals TRUE, then sigma is fixed and a prior for sigma is thus irrelevant")
 		}
 
 		# Assign correct variable types
@@ -165,16 +171,22 @@ bayesQR.single <- function(formula=NULL, data=NULL, quantile=0.5, alasso=FALSE, 
 	# QRb
 	#================================
 	} else if (QRb) {
+		# If normal approx was left unspecified, switch it off
+		if (is.null(normal.approx)) normal.approx <- FALSE 
+
 		# If missing, set default prior 
 		if (is.null(prior)) {
 			prior <- prior(formula=formula, data=data, alasso=alasso)
 		# Else check provided prior
-		} else if (class(prior)!="bayesQR.prior"){
+		} else if (is(prior)!="bayesQR.prior"){
 			pandterm("Incorrect prior: type '?prior' for more information about how to define priors")
 		} else if (prior$method!="QRb") {
 			pandterm("Incorrect prior: type '?prior' for more information about how to define priors")
-		} else if (normal.approx){
-			print("NOTE: normal approximation of the posterior is not supported for binary dependent variables")
+		}
+		
+		# If user requested the normal approximation, give warning
+		if (normal.approx){
+			warning("Normal approximation of the posterior is not supported for binary dependent variables")
 		}
 
 		# Assign correct variable types
@@ -199,22 +211,29 @@ bayesQR.single <- function(formula=NULL, data=NULL, quantile=0.5, alasso=FALSE, 
 			    quantile=quantile, 
 			    names=names,
 			    betadraw=matrix(fn_val[[10]], nrow=ndraw/keep,ncol=nvar),
-			    sigma.normal=rep(FALSE,nvar*nvar)
+			    sigma.normal=rep(NA,nvar*nvar)
 			    )
 	
 	# QRb.AL
 	#================================
 	} else if (QRb.AL) {
+
+		# If normal approx was left unspecified, switch it off
+		if (is.null(normal.approx)) normal.approx <- FALSE 
+
 		# If missing, set default prior 
 		if (is.null(prior)) {
 			prior <- prior(formula=formula, data=data, alasso=alasso)
 		# Else check provided prior
-		} else if (class(prior)!="bayesQR.prior"){
+		} else if (is(prior)!="bayesQR.prior"){
 			pandterm("Incorrect prior: type '?prior' for more information about how to define priors")
 		} else if (prior$method!="QRb.AL") {
 			pandterm("Incorrect prior: type '?prior' for more information about how to define priors")
-		} else if (normal.approx){
-			print("NOTE: normal approximation of the posterior is not supported for binary dependent variables")
+		} 
+
+		# If user requested the normal approximation, give warning
+		if (normal.approx){
+			warning("Normal approximation of the posterior is not supported for binary dependent variables")
 		}
 		
 		# Assign correct variable types
@@ -238,7 +257,7 @@ bayesQR.single <- function(formula=NULL, data=NULL, quantile=0.5, alasso=FALSE, 
 			    quantile=quantile,
 			    names=names,
 			    betadraw=matrix(fn_val[[10]], nrow=ndraw/keep, ncol=nvar),
-			    sigma.normal=rep(FALSE,nvar*nvar)
+			    sigma.normal=rep(NA,nvar*nvar)
 			    )
 		
 	} else {

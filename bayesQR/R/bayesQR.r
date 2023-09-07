@@ -1,4 +1,4 @@
-bayesQR <- function(formula=NULL, data=NULL, quantile=0.5, alasso=FALSE, normal.approx=TRUE, ndraw=NULL, keep=1, prior=NULL){
+bayesQR <- function(formula=NULL, data=NULL, quantile=0.5, alasso=FALSE, normal.approx=NULL, ndraw=NULL, keep=1, prior=NULL, seed=NULL){
 
 	# Create function for error message
 	pandterm <- function(message) {
@@ -10,6 +10,11 @@ bayesQR <- function(formula=NULL, data=NULL, quantile=0.5, alasso=FALSE, normal.
 
 	# Define an empty object (list)
 	out <- NULL
+
+	# Set seed value for Fortran random number generator
+	if (!is.null(seed)){
+		seedval <- .Fortran("setseed",as.integer(seed))
+	} 
 
 	# If only one quantile is required, then call bayesQR.single
 	if (nqr==1){

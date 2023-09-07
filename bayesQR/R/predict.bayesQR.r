@@ -28,8 +28,8 @@ predict.bayesQR <- function(object,X,burnin=0,...){
 	n <- nrow(X)
 	nvar <- ncol(X)
 	outsum <- summary(object=object, burnin=burnin)
-	bayesest <- sapply(outsum,"[[","betadraw")[1:nvar,]
-	preds <- X%*%bayesest
+	bayesest <- t(sapply(outsum,"[[","betadraw")[1:nvar,])
+	preds <- tcrossprod(X,bayesest)
 	      
 	# Find interval that contains zero
 	preds <- cbind(0,preds)
