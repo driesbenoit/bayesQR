@@ -1,0 +1,13 @@
+Churn                   Customer Churn Data
+Prostate                Prostate Cancer Data
+bayesQR                 Bayesian quantile regression
+plot.bayesQR            Produce quantile plots or traceplots with
+                        'plot.bayesQR'
+predict.bayesQR         Calculate predicted probabilities for binary
+                        quantile regression
+print.bayesQR           Prints the contents of 'bayesQR' object to the
+                        console
+print.bayesQR.summary   Prints the contents of 'bayesQR.summary' object
+                        to the console
+prior                   Create prior for Bayesian quantile regression
+summary.bayesQR         Summarize the output of the 'bayesQR' function

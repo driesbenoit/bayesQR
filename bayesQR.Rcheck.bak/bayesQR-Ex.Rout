@@ -1,0 +1,789 @@
+
+R version 3.2.1 (2015-06-18) -- "World-Famous Astronaut"
+Copyright (C) 2015 The R Foundation for Statistical Computing
+Platform: x86_64-unknown-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> pkgname <- "bayesQR"
+> source(file.path(R.home("share"), "R", "examples-header.R"))
+> options(warn = 1)
+> library('bayesQR')
+> 
+> base::assign(".oldSearch", base::search(), pos = 'CheckExEnv')
+> cleanEx()
+> nameEx("bayesQR")
+> ### * bayesQR
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: bayesQR
+> ### Title: Bayesian quantile regression
+> ### Aliases: bayesQR
+> 
+> ### ** Examples
+> 
+> # Simulate data from heteroskedastic regression
+> set.seed(66)
+> n <- 200
+> X <- runif(n=n,min=0,max=10)
+> X <- X
+> y <- 1 + 2*X + rnorm(n=n, mean=0, sd=.6*X)
+> 
+> # Estimate series of quantile regressions with adaptive lasso
+> out <- bayesQR(y~X, quantile=c(.05,.25,.5,.75,.95), alasso=TRUE, ndraw=5000)
+************************************************ 
+* Start estimating quantile  1  of  5 in total * 
+************************************************ 
+Current iteration :
+[1] 500
+Current iteration :
+[1] 1000
+Current iteration :
+[1] 1500
+Current iteration :
+[1] 2000
+Current iteration :
+[1] 2500
+Current iteration :
+[1] 3000
+Current iteration :
+[1] 3500
+Current iteration :
+[1] 4000
+Current iteration :
+[1] 4500
+Current iteration :
+[1] 5000
+************************************************ 
+* Start estimating quantile  2  of  5 in total * 
+************************************************ 
+Current iteration :
+[1] 500
+Current iteration :
+[1] 1000
+Current iteration :
+[1] 1500
+Current iteration :
+[1] 2000
+Current iteration :
+[1] 2500
+Current iteration :
+[1] 3000
+Current iteration :
+[1] 3500
+Current iteration :
+[1] 4000
+Current iteration :
+[1] 4500
+Current iteration :
+[1] 5000
+************************************************ 
+* Start estimating quantile  3  of  5 in total * 
+************************************************ 
+Current iteration :
+[1] 500
+Current iteration :
+[1] 1000
+Current iteration :
+[1] 1500
+Current iteration :
+[1] 2000
+Current iteration :
+[1] 2500
+Current iteration :
+[1] 3000
+Current iteration :
+[1] 3500
+Current iteration :
+[1] 4000
+Current iteration :
+[1] 4500
+Current iteration :
+[1] 5000
+************************************************ 
+* Start estimating quantile  4  of  5 in total * 
+************************************************ 
+Current iteration :
+[1] 500
+Current iteration :
+[1] 1000
+Current iteration :
+[1] 1500
+Current iteration :
+[1] 2000
+Current iteration :
+[1] 2500
+Current iteration :
+[1] 3000
+Current iteration :
+[1] 3500
+Current iteration :
+[1] 4000
+Current iteration :
+[1] 4500
+Current iteration :
+[1] 5000
+************************************************ 
+* Start estimating quantile  5  of  5 in total * 
+************************************************ 
+Current iteration :
+[1] 500
+Current iteration :
+[1] 1000
+Current iteration :
+[1] 1500
+Current iteration :
+[1] 2000
+Current iteration :
+[1] 2500
+Current iteration :
+[1] 3000
+Current iteration :
+[1] 3500
+Current iteration :
+[1] 4000
+Current iteration :
+[1] 4500
+Current iteration :
+[1] 5000
+> 
+> # Initiate plot
+> ## Plot datapoints
+> plot(X, y, main="", cex=.6, xlab="X")
+> 
+> ## Add quantile regression lines to the plot (exclude first 500 burn-in draws)
+> sum <- summary(out, burnin=500)
+> for (i in 1:length(sum)){
++   abline(a=sum[[i]]$betadraw[1,1],b=sum[[i]]$betadraw[2,1],lty=i,col=i)
++ }
+> 
+> # Estimate and plot OLS model
+> outOLS = lm(y~X)
+> abline(outOLS,lty=1,lwd=2,col=6)
+> 
+> # Add legend to plot
+> legend(x=0,y=max(y),legend=c(.05,.25,.50,.75,.95,"OLS"),lty=c(1,2,3,4,5,1),
++        lwd=c(1,1,1,1,1,2),col=c(1:6),title="Quantile")
+> 
+> 
+> 
+> cleanEx()
+> nameEx("plot.bayesQR")
+> ### * plot.bayesQR
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: plot.bayesQR
+> ### Title: Produce quantile plots or traceplots with 'plot.bayesQR'
+> ### Aliases: plot.bayesQR
+> 
+> ### ** Examples
+> 
+> # Simulate data from heteroskedastic regression
+> set.seed(66)
+> n <- 200
+> X <- runif(n=n,min=0,max=10)
+> X <- X
+> y <- 1 + 2*X + rnorm(n=n, mean=0, sd=.6*X)
+> 
+> # Analyze 5 quantiles using default prior
+> out <- bayesQR(y ~ X, quantile=c(.05,.25,.5,.75,.95), ndraw=5000)
+************************************************ 
+* Start estimating quantile  1  of  5 in total * 
+************************************************ 
+Current iteration :
+[1] 500
+Current iteration :
+[1] 1000
+Current iteration :
+[1] 1500
+Current iteration :
+[1] 2000
+Current iteration :
+[1] 2500
+Current iteration :
+[1] 3000
+Current iteration :
+[1] 3500
+Current iteration :
+[1] 4000
+Current iteration :
+[1] 4500
+Current iteration :
+[1] 5000
+************************************************ 
+* Start estimating quantile  2  of  5 in total * 
+************************************************ 
+Current iteration :
+[1] 500
+Current iteration :
+[1] 1000
+Current iteration :
+[1] 1500
+Current iteration :
+[1] 2000
+Current iteration :
+[1] 2500
+Current iteration :
+[1] 3000
+Current iteration :
+[1] 3500
+Current iteration :
+[1] 4000
+Current iteration :
+[1] 4500
+Current iteration :
+[1] 5000
+************************************************ 
+* Start estimating quantile  3  of  5 in total * 
+************************************************ 
+Current iteration :
+[1] 500
+Current iteration :
+[1] 1000
+Current iteration :
+[1] 1500
+Current iteration :
+[1] 2000
+Current iteration :
+[1] 2500
+Current iteration :
+[1] 3000
+Current iteration :
+[1] 3500
+Current iteration :
+[1] 4000
+Current iteration :
+[1] 4500
+Current iteration :
+[1] 5000
+************************************************ 
+* Start estimating quantile  4  of  5 in total * 
+************************************************ 
+Current iteration :
+[1] 500
+Current iteration :
+[1] 1000
+Current iteration :
+[1] 1500
+Current iteration :
+[1] 2000
+Current iteration :
+[1] 2500
+Current iteration :
+[1] 3000
+Current iteration :
+[1] 3500
+Current iteration :
+[1] 4000
+Current iteration :
+[1] 4500
+Current iteration :
+[1] 5000
+************************************************ 
+* Start estimating quantile  5  of  5 in total * 
+************************************************ 
+Current iteration :
+[1] 500
+Current iteration :
+[1] 1000
+Current iteration :
+[1] 1500
+Current iteration :
+[1] 2000
+Current iteration :
+[1] 2500
+Current iteration :
+[1] 3000
+Current iteration :
+[1] 3500
+Current iteration :
+[1] 4000
+Current iteration :
+[1] 4500
+Current iteration :
+[1] 5000
+> 
+> # Check traceplot of first variable of .75 quantile regression 
+> plot(out, var=1, quantile=.75, plottype="trace")
+> 
+> # Check posterior histogram of first variable of .5 quantile regression 
+> plot(out, var=1, quantile=.5, plottype="hist")
+> 
+> # Create default quantile plot of first variable
+> plot(out, var=1, plottype="quantile")
+> 
+> # Create quantile plot of second variable with 90% credible interval
+> plot(out, var="X", credint=c(.05, .95), plottype="quantile", main="This is an example")
+> 
+> 
+> 
+> cleanEx()
+> nameEx("predict.bayesQR")
+> ### * predict.bayesQR
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: predict.bayesQR
+> ### Title: Calculate predicted probabilities for binary quantile regression
+> ### Aliases: predict.bayesQR
+> 
+> ### ** Examples
+> 
+> # Simulate data from binary regression model
+> set.seed(1234)
+> n <- 200
+> X <- matrix(runif(n=n*2, min=-5, max=5),ncol=2)
+> ystar <- cbind(1,X)%*% c(1,1.5,-.5) + rnorm(n=n, mean=0, sd=abs(2*X[,1]))
+> y <- as.numeric(ystar>0)
+> 
+> ## Estimate a sequence of binary quantile regression models
+> out <- bayesQR(y ~ X, quantile=seq(.1,.9,.1), ndraw=4000)
+************************************************ 
+* Start estimating quantile  1  of  9 in total * 
+************************************************ 
+Current iteration :
+[1] 500
+Current iteration :
+[1] 1000
+Current iteration :
+[1] 1500
+Current iteration :
+[1] 2000
+Current iteration :
+[1] 2500
+Current iteration :
+[1] 3000
+Current iteration :
+[1] 3500
+Current iteration :
+[1] 4000
+************************************************ 
+* Start estimating quantile  2  of  9 in total * 
+************************************************ 
+Current iteration :
+[1] 500
+Current iteration :
+[1] 1000
+Current iteration :
+[1] 1500
+Current iteration :
+[1] 2000
+Current iteration :
+[1] 2500
+Current iteration :
+[1] 3000
+Current iteration :
+[1] 3500
+Current iteration :
+[1] 4000
+************************************************ 
+* Start estimating quantile  3  of  9 in total * 
+************************************************ 
+Current iteration :
+[1] 500
+Current iteration :
+[1] 1000
+Current iteration :
+[1] 1500
+Current iteration :
+[1] 2000
+Current iteration :
+[1] 2500
+Current iteration :
+[1] 3000
+Current iteration :
+[1] 3500
+Current iteration :
+[1] 4000
+************************************************ 
+* Start estimating quantile  4  of  9 in total * 
+************************************************ 
+Current iteration :
+[1] 500
+Current iteration :
+[1] 1000
+Current iteration :
+[1] 1500
+Current iteration :
+[1] 2000
+Current iteration :
+[1] 2500
+Current iteration :
+[1] 3000
+Current iteration :
+[1] 3500
+Current iteration :
+[1] 4000
+************************************************ 
+* Start estimating quantile  5  of  9 in total * 
+************************************************ 
+Current iteration :
+[1] 500
+Current iteration :
+[1] 1000
+Current iteration :
+[1] 1500
+Current iteration :
+[1] 2000
+Current iteration :
+[1] 2500
+Current iteration :
+[1] 3000
+Current iteration :
+[1] 3500
+Current iteration :
+[1] 4000
+************************************************ 
+* Start estimating quantile  6  of  9 in total * 
+************************************************ 
+Current iteration :
+[1] 500
+Current iteration :
+[1] 1000
+Current iteration :
+[1] 1500
+Current iteration :
+[1] 2000
+Current iteration :
+[1] 2500
+Current iteration :
+[1] 3000
+Current iteration :
+[1] 3500
+Current iteration :
+[1] 4000
+************************************************ 
+* Start estimating quantile  7  of  9 in total * 
+************************************************ 
+Current iteration :
+[1] 500
+Current iteration :
+[1] 1000
+Current iteration :
+[1] 1500
+Current iteration :
+[1] 2000
+Current iteration :
+[1] 2500
+Current iteration :
+[1] 3000
+Current iteration :
+[1] 3500
+Current iteration :
+[1] 4000
+************************************************ 
+* Start estimating quantile  8  of  9 in total * 
+************************************************ 
+Current iteration :
+[1] 500
+Current iteration :
+[1] 1000
+Current iteration :
+[1] 1500
+Current iteration :
+[1] 2000
+Current iteration :
+[1] 2500
+Current iteration :
+[1] 3000
+Current iteration :
+[1] 3500
+Current iteration :
+[1] 4000
+************************************************ 
+* Start estimating quantile  9  of  9 in total * 
+************************************************ 
+Current iteration :
+[1] 500
+Current iteration :
+[1] 1000
+Current iteration :
+[1] 1500
+Current iteration :
+[1] 2000
+Current iteration :
+[1] 2500
+Current iteration :
+[1] 3000
+Current iteration :
+[1] 3500
+Current iteration :
+[1] 4000
+> 
+> # Calculate predicted probabilities
+> pred <- predict(object=out, X=cbind(1,X), burnin=2000)
+> 
+> # Make histogram of predicted probabilities 
+> hist(pred,breaks=10)
+> 
+> # Calculate Percentage Correclty Classified (PCC)
+> mean(y==as.numeric(pred>.5))
+[1] 0.8
+> 
+> # Compare with logit model
+> mylogit <- glm(y ~ X, family=binomial(logit))
+> 
+> # Make histogram of predicted probabilities 
+> hist(mylogit$fit,breaks=10)
+> 
+> # Calculate Percentage Correclty Classified (PCC)
+> mean(y==as.numeric(mylogit$fit>.5))
+[1] 0.8
+> 
+> 
+> 
+> cleanEx()
+> nameEx("print.bayesQR")
+> ### * print.bayesQR
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: print.bayesQR.summary
+> ### Title: Prints the contents of 'bayesQR.summary' object to the console
+> ### Aliases: print.bayesQR.summary
+> 
+> ### ** Examples
+> 
+> # Simulate data from heteroskedastic regression
+> set.seed(666)
+> n <- 200
+> X <- runif(n=n,min=0,max=10)
+> y <- 1 + 2*X + rnorm(n=n, mean=0, sd=.6*X)
+> 
+> # Analyze 0.5 quantile using default prior and adaptive lasso
+> out <- bayesQR(y ~ X, alasso=TRUE, ndraw=5000) 
+Current iteration :
+[1] 500
+Current iteration :
+[1] 1000
+Current iteration :
+[1] 1500
+Current iteration :
+[1] 2000
+Current iteration :
+[1] 2500
+Current iteration :
+[1] 3000
+Current iteration :
+[1] 3500
+Current iteration :
+[1] 4000
+Current iteration :
+[1] 4500
+Current iteration :
+[1] 5000
+> 
+> # Return Bayes estimates and credible intervals 
+> sum <- summary(out, burnin=1000)
+> 
+> # Print the bayesQR.summary object
+> sum
+
+Type of dependent variable: continuous
+Lasso variable selection: yes
+Normal approximation of posterior: yes
+Estimated quantile:  0.5 
+Lower credible bound:  0.025 
+Upper credible bound:  0.975 
+Number of burnin draws:  1000 
+Number of retained draws:  4000 
+
+
+Summary of the estimated beta:
+
+            Bayes Estimate lower upper adj.lower adj.upper
+(Intercept)           1.19 0.827  1.62   -0.0223      2.41
+X                     1.86 1.770  1.94    1.4447      2.27
+
+> 
+> 
+> 
+> cleanEx()
+> nameEx("prior")
+> ### * prior
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: prior
+> ### Title: Create prior for Bayesian quantile regression
+> ### Aliases: prior
+> 
+> ### ** Examples
+> 
+> # Load the Prostate cancer dataset
+> data(Prostate)
+> 
+> # Create informative prior object
+> prior <- prior(lpsa~., data=Prostate, beta0=rep(5,9), V0=diag(9)) 
+> 
+> # Investigate structure of bayesQR.prior object
+> str(prior)
+List of 5
+ $ beta0 : num [1:9] 5 5 5 5 5 5 5 5 5
+ $ V0    : num [1:9, 1:9] 1 0 0 0 0 0 0 0 0 0 ...
+ $ shape0: num 0.01
+ $ scale0: num 0.01
+ $ method: chr "QRc"
+ - attr(*, "class")= chr "bayesQR.prior"
+> 
+> # Estimate the model parameters with informative prior
+> out <- bayesQR(lpsa~., data=Prostate, prior=prior, ndraw=5000)
+Current iteration :
+[1] 500
+Current iteration :
+[1] 1000
+Current iteration :
+[1] 1500
+Current iteration :
+[1] 2000
+Current iteration :
+[1] 2500
+Current iteration :
+[1] 3000
+Current iteration :
+[1] 3500
+Current iteration :
+[1] 4000
+Current iteration :
+[1] 4500
+Current iteration :
+[1] 5000
+> 
+> # Print results
+> summary(out)
+
+Type of dependent variable: continuous
+Lasso variable selection: no
+Normal approximation of posterior: yes
+Estimated quantile:  0.5 
+Lower credible bound:  0.025 
+Upper credible bound:  0.975 
+Number of burnin draws:  0 
+Number of retained draws:  5000 
+
+
+Summary of the estimated beta:
+
+            Bayes Estimate   lower   upper adj.lower adj.upper
+(Intercept)        3.86428  2.0744  5.6985    2.3487    5.3799
+lcavol             0.59153  0.2616  0.9332   -0.1604    1.3434
+lweight            0.39844 -0.1935  1.0951   -1.1621    1.9589
+age               -0.05808 -0.1025 -0.0183   -0.1515    0.0353
+lbph               0.31145  0.0868  0.5432   -0.2470    0.8699
+svi                1.55509  0.6447  2.4775   -0.4861    3.5963
+lcp               -0.10147 -0.4794  0.2555   -0.9748    0.7718
+gleason           -0.05637 -0.5269  0.3913   -1.1319    1.0192
+pgg45              0.00477 -0.0115  0.0201   -0.0311    0.0406
+
+> 
+> 
+> 
+> cleanEx()
+> nameEx("summary.bayesQR")
+> ### * summary.bayesQR
+> 
+> flush(stderr()); flush(stdout())
+> 
+> ### Name: summary.bayesQR
+> ### Title: Summarize the output of the 'bayesQR' function
+> ### Aliases: summary.bayesQR
+> 
+> ### ** Examples
+> 
+> # Load the Prostate cancer dataset
+> data(Churn)
+> 
+> # Estimate the model parameters with default prior
+> out <- bayesQR(churn~gender+recency, data=Churn, ndraw=5000)
+Current iteration :
+[1] 500
+Current iteration :
+[1] 1000
+Current iteration :
+[1] 1500
+Current iteration :
+[1] 2000
+Current iteration :
+[1] 2500
+Current iteration :
+[1] 3000
+Current iteration :
+[1] 3500
+Current iteration :
+[1] 4000
+Current iteration :
+[1] 4500
+Current iteration :
+[1] 5000
+> 
+> # Return Bayes estimates and credible intervals 
+> sum <- summary(out, burnin=1000)
+> 
+> # Inspect structure of bayesQR.summary object
+> str(sum)
+List of 1
+ $ :List of 8
+  ..$ method       : chr "QRb"
+  ..$ normal.approx: logi FALSE
+  ..$ quantile     : num 0.5
+  ..$ names        : chr [1:3] "(Intercept)" "gender" "recency"
+  ..$ burnin       : num 1000
+  ..$ retained     : num 4000
+  ..$ credint      : num [1:2] 0.025 0.975
+  ..$ betadraw     : num [1:3, 1:3] 0.0714 -0.1928 0.3392 -0.2453 -0.6442 ...
+  .. ..- attr(*, "dimnames")=List of 2
+  .. .. ..$ : chr [1:3] "(Intercept)" "gender" "recency"
+  .. .. ..$ : chr [1:3] "Bayes Estimate" "lower" "upper"
+ - attr(*, "class")= chr "bayesQR.summary"
+> 
+> # Print bayesQR.summary object
+> sum
+
+Type of dependent variable: binary
+Lasso variable selection: no
+Normal approximation of posterior: no
+Estimated quantile:  0.5 
+Lower credible bound:  0.025 
+Upper credible bound:  0.975 
+Number of burnin draws:  1000 
+Number of retained draws:  4000 
+
+
+Summary of the estimated beta:
+
+            Bayes Estimate   lower upper
+(Intercept)         0.0714 -0.2453 0.392
+gender             -0.1928 -0.6442 0.229
+recency             0.3392  0.0956 0.596
+
+> 
+> 
+> 
+> ### * <FOOTER>
+> ###
+> options(digits = 7L)
+> base::cat("Time elapsed: ", proc.time() - base::get("ptime", pos = 'CheckExEnv'),"\n")
+Time elapsed:  10.733 0.02 10.763 0 0 
+> grDevices::dev.off()
+null device 
+          1 
+> ###
+> ### Local variables: ***
+> ### mode: outline-minor ***
+> ### outline-regexp: "\\(> \\)?### [*]+" ***
+> ### End: ***
+> quit('no')

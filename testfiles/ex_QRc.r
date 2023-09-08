@@ -35,3 +35,10 @@ abline(outOLS$coef,lty=1,lwd=2,col=6)
 
 # Add legend to plot
 legend(x=0,y=max(y),legend=c(.05,.25,.50,.75,.95,"OLS"),lty=c(1,2,3,4,5,1),lwd=c(1,1,1,1,1,2),col=c(1:6),title="Quantile")
+
+out <- bayesQR(y~0+X,quantile=c(.25,.75),ndraw=5000)
+str(out)
+
+mean(out[[1]]$betadraw[,1]<out[[2]]$betadraw[,1])
+
+plot(out,quantile=.25,plottype="hist",burnin=100)

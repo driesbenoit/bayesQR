@@ -1,0 +1,657 @@
+Hmm ... looks like a package
+
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+LaTeX2e <2016/03/31> patch level 3
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+(./Rd2.tex
+(/usr/share/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/bk10.clo))
+(/usr/share/texmf/tex/latex/Rd.sty
+(/usr/share/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/share/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/share/texmf-dist/tex/latex/tools/bm.sty)
+(/usr/share/texmf-dist/tex/latex/base/alltt.sty)
+(/usr/share/texmf-dist/tex/latex/tools/verbatim.sty)
+(/usr/share/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texmf-dist/tex/latex/base/textcomp.sty
+(/usr/share/texmf-dist/tex/latex/base/ts1enc.def))
+(/usr/share/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/share/texmf-dist/tex/latex/base/t1enc.def))
+(/usr/share/texmf-dist/tex/latex/psnfss/times.sty)
+(/usr/share/texmf-dist/tex/latex/inconsolata/zi4.sty
+`inconsolata-zi4' v1.10, 2016/02/22 Text macros for Inconsolata (msharpe)
+(/usr/share/texmf-dist/tex/latex/graphics/keyval.sty))
+(/usr/share/texmf-dist/tex/latex/graphics/color.sty
+(/usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+(/usr/share/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/usr/share/texmf-dist/tex/generic/oberdiek/ltxcmds.sty)))
+(/usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/share/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(/usr/share/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(/usr/share/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texmf-dist/tex/latex/latexconfig/hyperref.cfg))
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+
+Package hyperref Warning: Option `hyperindex' has already been used,
+(hyperref)                setting the option has no effect on input line 366.
+
+
+Package hyperref Warning: Option `pagebackref' has already been used,
+(hyperref)                setting the option has no effect on input line 366.
+
+) (/usr/share/texmf-dist/tex/latex/base/makeidx.sty)
+(/usr/share/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/share/texmf-dist/tex/latex/base/utf8.def
+(/usr/share/texmf-dist/tex/latex/base/t1enc.dfu)
+(/usr/share/texmf-dist/tex/latex/base/ot1enc.dfu)
+(/usr/share/texmf-dist/tex/latex/base/omsenc.dfu)
+(/usr/share/texmf-dist/tex/latex/base/ts1enc.dfu))
+(/usr/share/texmf-dist/tex/latex/base/latin1.def))
+Writing index file Rd2.idx
+No file Rd2.aux.
+(/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd)
+(/usr/share/texmf-dist/tex/latex/psnfss/t1ptm.fd)
+(/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+(/usr/share/texmf-dist/tex/latex/inconsolata/t1zi4.fd)
+(/usr/share/texmf-dist/tex/latex/psnfss/t1phv.fd)
+(/usr/share/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (9.78088pt too wide) in paragraph at lines 38--38
+ []  \T1/zi4/m/n/10 bayesQR(formula, data, quantile, alasso, normal.approx, ndr
+aw, keep, prior, seed)[] 
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+(/usr/share/texmf-dist/tex/latex/psnfss/ts1ptm.fd) [2]
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
+
+
+Overfull \hbox (88.23808pt too wide) in paragraph at lines 130--132
+\T1/ptm/m/n/10 sion, \T1/ptm/m/it/10 Jour-nal of Sta-tis-ti-cal Com-pu-ta-tion 
+and Sim-u-la-tion\T1/ptm/m/n/10 , 81(11), 1565-1578. <doi:10.1080/00949655.2010
+.496117> 
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--132
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--139
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 142--143
+
+[3] (/usr/share/texmf-dist/tex/latex/base/utf8.def) [4]
+(/usr/share/texmf-dist/tex/latex/base/utf8.def)
+(/usr/share/texmf-dist/tex/latex/inconsolata/ts1zi4.fd)
+Overfull \hbox (4.78088pt too wide) in paragraph at lines 234--234
+ []\T1/zi4/m/n/10 plot(x, var=NULL, quantile=NULL, burnin=0, credint=c(0.025,0.
+975), plottype=NULL,[] 
+[5] (/usr/share/texmf-dist/tex/latex/base/utf8.def) [6]
+Underfull \hbox (badness 10000) in paragraph at lines 341--345
+
+[7] (/usr/share/texmf-dist/tex/latex/base/utf8.def) [8]
+(/usr/share/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (29.92851pt too wide) in paragraph at lines 430--431
+[]\T1/zi4/m/n/10 print.bayesQR.summary \T1/ptm/m/n/10 is an S3 method that prin
+ts the con-tent of an S3 ob-ject of class \T1/zi4/m/n/10 bayesQR.summary
+[9] (/usr/share/texmf-dist/tex/latex/base/utf8.def) [10]
+(/usr/share/texmf-dist/tex/latex/base/utf8.def) [11]
+Underfull \hbox (badness 10000) in paragraph at lines 617--629
+
+(/usr/share/texmf-dist/tex/latex/base/utf8.def) [12] [13]
+No file Rd2.ind.
+[14] (/tmp/RtmpmmiD9r/Rd2pdf3a1b7fb9ad0a/Rd2.aux)
+
+Package rerunfilecheck Warning: File `Rd2.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ )
+(see the transcript file for additional information){/usr/share/texmf-dist/font
+s/enc/dvips/inconsolata/i4-ts1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/base/
+8r.enc}{/usr/share/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}</usr/sha
+re/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/share/t
+exmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-dist/fonts/type
+1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+</usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/
+fonts/type1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (14 pages, 114989 bytes).
+Transcript written on Rd2.log.
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+LaTeX2e <2016/03/31> patch level 3
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+(./Rd2.tex
+(/usr/share/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/bk10.clo))
+(/usr/share/texmf/tex/latex/Rd.sty
+(/usr/share/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/share/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/share/texmf-dist/tex/latex/tools/bm.sty)
+(/usr/share/texmf-dist/tex/latex/base/alltt.sty)
+(/usr/share/texmf-dist/tex/latex/tools/verbatim.sty)
+(/usr/share/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texmf-dist/tex/latex/base/textcomp.sty
+(/usr/share/texmf-dist/tex/latex/base/ts1enc.def))
+(/usr/share/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/share/texmf-dist/tex/latex/base/t1enc.def))
+(/usr/share/texmf-dist/tex/latex/psnfss/times.sty)
+(/usr/share/texmf-dist/tex/latex/inconsolata/zi4.sty
+`inconsolata-zi4' v1.10, 2016/02/22 Text macros for Inconsolata (msharpe)
+(/usr/share/texmf-dist/tex/latex/graphics/keyval.sty))
+(/usr/share/texmf-dist/tex/latex/graphics/color.sty
+(/usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+(/usr/share/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/usr/share/texmf-dist/tex/generic/oberdiek/ltxcmds.sty)))
+(/usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/share/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(/usr/share/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(/usr/share/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texmf-dist/tex/latex/latexconfig/hyperref.cfg))
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+
+Package hyperref Warning: Option `hyperindex' has already been used,
+(hyperref)                setting the option has no effect on input line 366.
+
+
+Package hyperref Warning: Option `pagebackref' has already been used,
+(hyperref)                setting the option has no effect on input line 366.
+
+) (/usr/share/texmf-dist/tex/latex/base/makeidx.sty)
+(/usr/share/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/share/texmf-dist/tex/latex/base/utf8.def
+(/usr/share/texmf-dist/tex/latex/base/t1enc.dfu)
+(/usr/share/texmf-dist/tex/latex/base/ot1enc.dfu)
+(/usr/share/texmf-dist/tex/latex/base/omsenc.dfu)
+(/usr/share/texmf-dist/tex/latex/base/ts1enc.dfu))
+(/usr/share/texmf-dist/tex/latex/base/latin1.def))
+Writing index file Rd2.idx
+(/tmp/RtmpmmiD9r/Rd2pdf3a1b7fb9ad0a/Rd2.aux)
+(/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd)
+(/usr/share/texmf-dist/tex/latex/psnfss/t1ptm.fd)
+(/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+(/tmp/RtmpmmiD9r/Rd2pdf3a1b7fb9ad0a/Rd2.out)
+(/tmp/RtmpmmiD9r/Rd2pdf3a1b7fb9ad0a/Rd2.out)
+(/usr/share/texmf-dist/tex/latex/inconsolata/t1zi4.fd)
+(/usr/share/texmf-dist/tex/latex/psnfss/t1phv.fd)
+(/tmp/RtmpmmiD9r/Rd2pdf3a1b7fb9ad0a/Rd2.toc)
+(/usr/share/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (9.78088pt too wide) in paragraph at lines 38--38
+ []  \T1/zi4/m/n/10 bayesQR(formula, data, quantile, alasso, normal.approx, ndr
+aw, keep, prior, seed)[] 
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+(/usr/share/texmf-dist/tex/latex/psnfss/ts1ptm.fd) [2]
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
+
+
+Overfull \hbox (88.23808pt too wide) in paragraph at lines 130--132
+\T1/ptm/m/n/10 sion, \T1/ptm/m/it/10 Jour-nal of Sta-tis-ti-cal Com-pu-ta-tion 
+and Sim-u-la-tion\T1/ptm/m/n/10 , 81(11), 1565-1578. <doi:10.1080/00949655.2010
+.496117> 
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--132
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--139
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 142--143
+
+[3] (/usr/share/texmf-dist/tex/latex/base/utf8.def) [4]
+(/usr/share/texmf-dist/tex/latex/base/utf8.def)
+(/usr/share/texmf-dist/tex/latex/inconsolata/ts1zi4.fd)
+Overfull \hbox (4.78088pt too wide) in paragraph at lines 234--234
+ []\T1/zi4/m/n/10 plot(x, var=NULL, quantile=NULL, burnin=0, credint=c(0.025,0.
+975), plottype=NULL,[] 
+[5] (/usr/share/texmf-dist/tex/latex/base/utf8.def) [6]
+Underfull \hbox (badness 10000) in paragraph at lines 341--345
+
+[7] (/usr/share/texmf-dist/tex/latex/base/utf8.def) [8]
+(/usr/share/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (29.92851pt too wide) in paragraph at lines 430--431
+[]\T1/zi4/m/n/10 print.bayesQR.summary \T1/ptm/m/n/10 is an S3 method that prin
+ts the con-tent of an S3 ob-ject of class \T1/zi4/m/n/10 bayesQR.summary
+[9] (/usr/share/texmf-dist/tex/latex/base/utf8.def) [10]
+(/usr/share/texmf-dist/tex/latex/base/utf8.def) [11]
+Underfull \hbox (badness 10000) in paragraph at lines 617--629
+
+(/usr/share/texmf-dist/tex/latex/base/utf8.def) [12] [13]
+No file Rd2.ind.
+[14] (/tmp/RtmpmmiD9r/Rd2pdf3a1b7fb9ad0a/Rd2.aux) )
+(see the transcript file for additional information){/usr/share/texmf-dist/font
+s/enc/dvips/inconsolata/i4-ts1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/base/
+8r.enc}{/usr/share/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}</usr/sha
+re/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/share/t
+exmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-dist/fonts/type
+1/urw/times/utmb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+</usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/
+fonts/type1/urw/times/utmri8a.pfb>
+Output written on Rd2.pdf (14 pages, 116331 bytes).
+Transcript written on Rd2.log.
+This is makeindex, version 2.15 [TeX Live 2016] (kpathsea + Thai support).
+Scanning input file Rd2.idx....done (12 entries accepted, 0 rejected).
+Sorting entries....done (39 comparisons).
+Generating output file Rd2.ind....done (28 lines written, 0 warnings).
+Output written in Rd2.ind.
+Transcript written in Rd2.ilg.
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+LaTeX2e <2016/03/31> patch level 3
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+(./Rd2.tex
+(/usr/share/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/bk10.clo))
+(/usr/share/texmf/tex/latex/Rd.sty
+(/usr/share/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/share/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/share/texmf-dist/tex/latex/tools/bm.sty)
+(/usr/share/texmf-dist/tex/latex/base/alltt.sty)
+(/usr/share/texmf-dist/tex/latex/tools/verbatim.sty)
+(/usr/share/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texmf-dist/tex/latex/base/textcomp.sty
+(/usr/share/texmf-dist/tex/latex/base/ts1enc.def))
+(/usr/share/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/share/texmf-dist/tex/latex/base/t1enc.def))
+(/usr/share/texmf-dist/tex/latex/psnfss/times.sty)
+(/usr/share/texmf-dist/tex/latex/inconsolata/zi4.sty
+`inconsolata-zi4' v1.10, 2016/02/22 Text macros for Inconsolata (msharpe)
+(/usr/share/texmf-dist/tex/latex/graphics/keyval.sty))
+(/usr/share/texmf-dist/tex/latex/graphics/color.sty
+(/usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+(/usr/share/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/usr/share/texmf-dist/tex/generic/oberdiek/ltxcmds.sty)))
+(/usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/share/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(/usr/share/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(/usr/share/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texmf-dist/tex/latex/latexconfig/hyperref.cfg))
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+
+Package hyperref Warning: Option `hyperindex' has already been used,
+(hyperref)                setting the option has no effect on input line 366.
+
+
+Package hyperref Warning: Option `pagebackref' has already been used,
+(hyperref)                setting the option has no effect on input line 366.
+
+) (/usr/share/texmf-dist/tex/latex/base/makeidx.sty)
+(/usr/share/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/share/texmf-dist/tex/latex/base/utf8.def
+(/usr/share/texmf-dist/tex/latex/base/t1enc.dfu)
+(/usr/share/texmf-dist/tex/latex/base/ot1enc.dfu)
+(/usr/share/texmf-dist/tex/latex/base/omsenc.dfu)
+(/usr/share/texmf-dist/tex/latex/base/ts1enc.dfu))
+(/usr/share/texmf-dist/tex/latex/base/latin1.def))
+Writing index file Rd2.idx
+(/tmp/RtmpmmiD9r/Rd2pdf3a1b7fb9ad0a/Rd2.aux)
+(/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd)
+(/usr/share/texmf-dist/tex/latex/psnfss/t1ptm.fd)
+(/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+(/tmp/RtmpmmiD9r/Rd2pdf3a1b7fb9ad0a/Rd2.out)
+(/tmp/RtmpmmiD9r/Rd2pdf3a1b7fb9ad0a/Rd2.out)
+(/usr/share/texmf-dist/tex/latex/inconsolata/t1zi4.fd)
+(/usr/share/texmf-dist/tex/latex/psnfss/t1phv.fd)
+(/tmp/RtmpmmiD9r/Rd2pdf3a1b7fb9ad0a/Rd2.toc)
+(/usr/share/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (9.78088pt too wide) in paragraph at lines 38--38
+ []  \T1/zi4/m/n/10 bayesQR(formula, data, quantile, alasso, normal.approx, ndr
+aw, keep, prior, seed)[] 
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+(/usr/share/texmf-dist/tex/latex/psnfss/ts1ptm.fd) [2]
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
+
+
+Overfull \hbox (88.23808pt too wide) in paragraph at lines 130--132
+\T1/ptm/m/n/10 sion, \T1/ptm/m/it/10 Jour-nal of Sta-tis-ti-cal Com-pu-ta-tion 
+and Sim-u-la-tion\T1/ptm/m/n/10 , 81(11), 1565-1578. <doi:10.1080/00949655.2010
+.496117> 
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--132
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--139
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 142--143
+
+[3] (/usr/share/texmf-dist/tex/latex/base/utf8.def) [4]
+(/usr/share/texmf-dist/tex/latex/base/utf8.def)
+(/usr/share/texmf-dist/tex/latex/inconsolata/ts1zi4.fd)
+Overfull \hbox (4.78088pt too wide) in paragraph at lines 234--234
+ []\T1/zi4/m/n/10 plot(x, var=NULL, quantile=NULL, burnin=0, credint=c(0.025,0.
+975), plottype=NULL,[] 
+[5] (/usr/share/texmf-dist/tex/latex/base/utf8.def) [6]
+Underfull \hbox (badness 10000) in paragraph at lines 341--345
+
+[7] (/usr/share/texmf-dist/tex/latex/base/utf8.def) [8]
+(/usr/share/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (29.92851pt too wide) in paragraph at lines 430--431
+[]\T1/zi4/m/n/10 print.bayesQR.summary \T1/ptm/m/n/10 is an S3 method that prin
+ts the con-tent of an S3 ob-ject of class \T1/zi4/m/n/10 bayesQR.summary
+[9] (/usr/share/texmf-dist/tex/latex/base/utf8.def) [10]
+(/usr/share/texmf-dist/tex/latex/base/utf8.def) [11]
+Underfull \hbox (badness 10000) in paragraph at lines 617--629
+
+(/usr/share/texmf-dist/tex/latex/base/utf8.def) [12] [13]
+(/tmp/RtmpmmiD9r/Rd2pdf3a1b7fb9ad0a/Rd2.ind [14] [15])
+(/tmp/RtmpmmiD9r/Rd2pdf3a1b7fb9ad0a/Rd2.aux)
+
+Package rerunfilecheck Warning: File `Rd2.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+ )
+(see the transcript file for additional information){/usr/share/texmf-dist/font
+s/enc/dvips/inconsolata/i4-ts1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/base/
+8r.enc}{/usr/share/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}</usr/sha
+re/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/share/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/font
+s/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/ut
+mb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/te
+xmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/ur
+w/times/utmri8a.pfb>
+Output written on Rd2.pdf (15 pages, 124593 bytes).
+Transcript written on Rd2.log.
+This is makeindex, version 2.15 [TeX Live 2016] (kpathsea + Thai support).
+Scanning input file Rd2.idx....done (12 entries accepted, 0 rejected).
+Sorting entries....done (39 comparisons).
+Generating output file Rd2.ind....done (28 lines written, 0 warnings).
+Output written in Rd2.ind.
+Transcript written in Rd2.ilg.
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+LaTeX2e <2016/03/31> patch level 3
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+(./Rd2.tex
+(/usr/share/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/bk10.clo))
+(/usr/share/texmf/tex/latex/Rd.sty
+(/usr/share/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/share/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/share/texmf-dist/tex/latex/tools/bm.sty)
+(/usr/share/texmf-dist/tex/latex/base/alltt.sty)
+(/usr/share/texmf-dist/tex/latex/tools/verbatim.sty)
+(/usr/share/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texmf-dist/tex/latex/base/textcomp.sty
+(/usr/share/texmf-dist/tex/latex/base/ts1enc.def))
+(/usr/share/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/share/texmf-dist/tex/latex/base/t1enc.def))
+(/usr/share/texmf-dist/tex/latex/psnfss/times.sty)
+(/usr/share/texmf-dist/tex/latex/inconsolata/zi4.sty
+`inconsolata-zi4' v1.10, 2016/02/22 Text macros for Inconsolata (msharpe)
+(/usr/share/texmf-dist/tex/latex/graphics/keyval.sty))
+(/usr/share/texmf-dist/tex/latex/graphics/color.sty
+(/usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+(/usr/share/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/usr/share/texmf-dist/tex/generic/oberdiek/ltxcmds.sty)))
+(/usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/share/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(/usr/share/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(/usr/share/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texmf-dist/tex/latex/latexconfig/hyperref.cfg))
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+
+Package hyperref Warning: Option `hyperindex' has already been used,
+(hyperref)                setting the option has no effect on input line 366.
+
+
+Package hyperref Warning: Option `pagebackref' has already been used,
+(hyperref)                setting the option has no effect on input line 366.
+
+) (/usr/share/texmf-dist/tex/latex/base/makeidx.sty)
+(/usr/share/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/share/texmf-dist/tex/latex/base/utf8.def
+(/usr/share/texmf-dist/tex/latex/base/t1enc.dfu)
+(/usr/share/texmf-dist/tex/latex/base/ot1enc.dfu)
+(/usr/share/texmf-dist/tex/latex/base/omsenc.dfu)
+(/usr/share/texmf-dist/tex/latex/base/ts1enc.dfu))
+(/usr/share/texmf-dist/tex/latex/base/latin1.def))
+Writing index file Rd2.idx
+(/tmp/RtmpmmiD9r/Rd2pdf3a1b7fb9ad0a/Rd2.aux)
+(/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd)
+(/usr/share/texmf-dist/tex/latex/psnfss/t1ptm.fd)
+(/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+(/tmp/RtmpmmiD9r/Rd2pdf3a1b7fb9ad0a/Rd2.out)
+(/tmp/RtmpmmiD9r/Rd2pdf3a1b7fb9ad0a/Rd2.out)
+(/usr/share/texmf-dist/tex/latex/inconsolata/t1zi4.fd)
+(/usr/share/texmf-dist/tex/latex/psnfss/t1phv.fd)
+(/tmp/RtmpmmiD9r/Rd2pdf3a1b7fb9ad0a/Rd2.toc)
+(/usr/share/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (9.78088pt too wide) in paragraph at lines 38--38
+ []  \T1/zi4/m/n/10 bayesQR(formula, data, quantile, alasso, normal.approx, ndr
+aw, keep, prior, seed)[] 
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+(/usr/share/texmf-dist/tex/latex/psnfss/ts1ptm.fd)
+Underfull \vbox (badness 10000) has occurred while \output is active [2]
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
+
+
+Overfull \hbox (88.23808pt too wide) in paragraph at lines 130--132
+\T1/ptm/m/n/10 sion, \T1/ptm/m/it/10 Jour-nal of Sta-tis-ti-cal Com-pu-ta-tion 
+and Sim-u-la-tion\T1/ptm/m/n/10 , 81(11), 1565-1578. <doi:10.1080/00949655.2010
+.496117> 
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--132
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--139
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 142--143
+
+(/usr/share/texmf-dist/tex/latex/base/utf8.def) [4]
+(/usr/share/texmf-dist/tex/latex/base/utf8.def)
+(/usr/share/texmf-dist/tex/latex/inconsolata/ts1zi4.fd)
+Overfull \hbox (4.78088pt too wide) in paragraph at lines 234--234
+ []\T1/zi4/m/n/10 plot(x, var=NULL, quantile=NULL, burnin=0, credint=c(0.025,0.
+975), plottype=NULL,[] 
+[5] [6] (/usr/share/texmf-dist/tex/latex/base/utf8.def) [7]
+Underfull \hbox (badness 10000) in paragraph at lines 341--345
+
+(/usr/share/texmf-dist/tex/latex/base/utf8.def) [8]
+(/usr/share/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (29.92851pt too wide) in paragraph at lines 430--431
+[]\T1/zi4/m/n/10 print.bayesQR.summary \T1/ptm/m/n/10 is an S3 method that prin
+ts the con-tent of an S3 ob-ject of class \T1/zi4/m/n/10 bayesQR.summary
+[9] (/usr/share/texmf-dist/tex/latex/base/utf8.def) [10] [11]
+(/usr/share/texmf-dist/tex/latex/base/utf8.def)
+Underfull \hbox (badness 10000) in paragraph at lines 617--629
+
+(/usr/share/texmf-dist/tex/latex/base/utf8.def) [12] [13]
+(/tmp/RtmpmmiD9r/Rd2pdf3a1b7fb9ad0a/Rd2.ind [14] [15])
+(/tmp/RtmpmmiD9r/Rd2pdf3a1b7fb9ad0a/Rd2.aux) )
+(see the transcript file for additional information){/usr/share/texmf-dist/font
+s/enc/dvips/inconsolata/i4-ts1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/base/
+8r.enc}{/usr/share/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}</usr/sha
+re/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/share/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/font
+s/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/ut
+mb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/te
+xmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/ur
+w/times/utmri8a.pfb>
+Output written on Rd2.pdf (15 pages, 124602 bytes).
+Transcript written on Rd2.log.
+This is makeindex, version 2.15 [TeX Live 2016] (kpathsea + Thai support).
+Scanning input file Rd2.idx....done (12 entries accepted, 0 rejected).
+Sorting entries....done (39 comparisons).
+Generating output file Rd2.ind....done (28 lines written, 0 warnings).
+Output written in Rd2.ind.
+Transcript written in Rd2.ilg.
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Arch Linux) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+LaTeX2e <2016/03/31> patch level 3
+Babel <3.9r> and hyphenation patterns for 83 language(s) loaded.
+(./Rd2.tex
+(/usr/share/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texmf-dist/tex/latex/base/bk10.clo))
+(/usr/share/texmf/tex/latex/Rd.sty
+(/usr/share/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/share/texmf-dist/tex/latex/tools/longtable.sty)
+(/usr/share/texmf-dist/tex/latex/tools/bm.sty)
+(/usr/share/texmf-dist/tex/latex/base/alltt.sty)
+(/usr/share/texmf-dist/tex/latex/tools/verbatim.sty)
+(/usr/share/texmf-dist/tex/latex/url/url.sty)
+(/usr/share/texmf-dist/tex/latex/base/textcomp.sty
+(/usr/share/texmf-dist/tex/latex/base/ts1enc.def))
+(/usr/share/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/share/texmf-dist/tex/latex/base/t1enc.def))
+(/usr/share/texmf-dist/tex/latex/psnfss/times.sty)
+(/usr/share/texmf-dist/tex/latex/inconsolata/zi4.sty
+`inconsolata-zi4' v1.10, 2016/02/22 Text macros for Inconsolata (msharpe)
+(/usr/share/texmf-dist/tex/latex/graphics/keyval.sty))
+(/usr/share/texmf-dist/tex/latex/graphics/color.sty
+(/usr/share/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/share/texmf-dist/tex/latex/graphics-def/pdftex.def
+(/usr/share/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/usr/share/texmf-dist/tex/generic/oberdiek/ltxcmds.sty)))
+(/usr/share/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/share/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(/usr/share/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(/usr/share/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/share/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texmf-dist/tex/latex/latexconfig/hyperref.cfg))
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/share/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+
+Package hyperref Warning: Option `hyperindex' has already been used,
+(hyperref)                setting the option has no effect on input line 366.
+
+
+Package hyperref Warning: Option `pagebackref' has already been used,
+(hyperref)                setting the option has no effect on input line 366.
+
+) (/usr/share/texmf-dist/tex/latex/base/makeidx.sty)
+(/usr/share/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/share/texmf-dist/tex/latex/base/utf8.def
+(/usr/share/texmf-dist/tex/latex/base/t1enc.dfu)
+(/usr/share/texmf-dist/tex/latex/base/ot1enc.dfu)
+(/usr/share/texmf-dist/tex/latex/base/omsenc.dfu)
+(/usr/share/texmf-dist/tex/latex/base/ts1enc.dfu))
+(/usr/share/texmf-dist/tex/latex/base/latin1.def))
+Writing index file Rd2.idx
+(/tmp/RtmpmmiD9r/Rd2pdf3a1b7fb9ad0a/Rd2.aux)
+(/usr/share/texmf-dist/tex/latex/base/ts1cmr.fd)
+(/usr/share/texmf-dist/tex/latex/psnfss/t1ptm.fd)
+(/usr/share/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+(/tmp/RtmpmmiD9r/Rd2pdf3a1b7fb9ad0a/Rd2.out)
+(/tmp/RtmpmmiD9r/Rd2pdf3a1b7fb9ad0a/Rd2.out)
+(/usr/share/texmf-dist/tex/latex/inconsolata/t1zi4.fd)
+(/usr/share/texmf-dist/tex/latex/psnfss/t1phv.fd)
+(/tmp/RtmpmmiD9r/Rd2pdf3a1b7fb9ad0a/Rd2.toc)
+(/usr/share/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (9.78088pt too wide) in paragraph at lines 38--38
+ []  \T1/zi4/m/n/10 bayesQR(formula, data, quantile, alasso, normal.approx, ndr
+aw, keep, prior, seed)[] 
+[1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+(/usr/share/texmf-dist/tex/latex/psnfss/ts1ptm.fd)
+Underfull \vbox (badness 10000) has occurred while \output is active [2]
+Underfull \hbox (badness 10000) in paragraph at lines 124--125
+
+
+Overfull \hbox (88.23808pt too wide) in paragraph at lines 130--132
+\T1/ptm/m/n/10 sion, \T1/ptm/m/it/10 Jour-nal of Sta-tis-ti-cal Com-pu-ta-tion 
+and Sim-u-la-tion\T1/ptm/m/n/10 , 81(11), 1565-1578. <doi:10.1080/00949655.2010
+.496117> 
+
+Underfull \hbox (badness 10000) in paragraph at lines 130--132
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 137--139
+
+[3]
+Underfull \hbox (badness 10000) in paragraph at lines 142--143
+
+(/usr/share/texmf-dist/tex/latex/base/utf8.def) [4]
+(/usr/share/texmf-dist/tex/latex/base/utf8.def)
+(/usr/share/texmf-dist/tex/latex/inconsolata/ts1zi4.fd)
+Overfull \hbox (4.78088pt too wide) in paragraph at lines 234--234
+ []\T1/zi4/m/n/10 plot(x, var=NULL, quantile=NULL, burnin=0, credint=c(0.025,0.
+975), plottype=NULL,[] 
+[5] [6] (/usr/share/texmf-dist/tex/latex/base/utf8.def) [7]
+Underfull \hbox (badness 10000) in paragraph at lines 341--345
+
+(/usr/share/texmf-dist/tex/latex/base/utf8.def) [8]
+(/usr/share/texmf-dist/tex/latex/base/utf8.def)
+Overfull \hbox (29.92851pt too wide) in paragraph at lines 430--431
+[]\T1/zi4/m/n/10 print.bayesQR.summary \T1/ptm/m/n/10 is an S3 method that prin
+ts the con-tent of an S3 ob-ject of class \T1/zi4/m/n/10 bayesQR.summary
+[9] (/usr/share/texmf-dist/tex/latex/base/utf8.def) [10] [11]
+(/usr/share/texmf-dist/tex/latex/base/utf8.def)
+Underfull \hbox (badness 10000) in paragraph at lines 617--629
+
+(/usr/share/texmf-dist/tex/latex/base/utf8.def) [12] [13]
+(/tmp/RtmpmmiD9r/Rd2pdf3a1b7fb9ad0a/Rd2.ind [14] [15])
+(/tmp/RtmpmmiD9r/Rd2pdf3a1b7fb9ad0a/Rd2.aux) )
+(see the transcript file for additional information){/usr/share/texmf-dist/font
+s/enc/dvips/inconsolata/i4-ts1.enc}{/usr/share/texmf-dist/fonts/enc/dvips/base/
+8r.enc}{/usr/share/texmf-dist/fonts/enc/dvips/inconsolata/i4-t1-0.enc}</usr/sha
+re/texmf-dist/fonts/type1/public/inconsolata/Inconsolata-zi4r.pfb></usr/share/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/font
+s/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/ut
+mb8a.pfb></usr/share/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/te
+xmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-dist/fonts/type1/ur
+w/times/utmri8a.pfb>
+Output written on Rd2.pdf (15 pages, 124606 bytes).
+Transcript written on Rd2.log.
+Saving output to 'bayesQR-manual.pdf' ...
+Done
+You may want to clean up by 'rm -rf /tmp/RtmpmmiD9r/Rd2pdf3a1b7fb9ad0a'
