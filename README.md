@@ -23,3 +23,5 @@ Corresponding BibTeX entry:
 }
 ````
 
+# CRAN
+[](https://CRAN.R-project.org/package=bayesQR)
